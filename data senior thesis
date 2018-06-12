@@ -1,0 +1,106 @@
+data senior thesis
+
+premise for the data stats:
+look at nyse/tse index
+look at volume/activity on r/worldnews (use PRAW for scraping)
+	somehow categorize into types of posts? (politics, tech, etc)
+see the effect of reddit activity on stock index
+
+
+1. Topic Question: Including why you've chosen to examine this subject.
+The Purpose: Clearly there must be some type of purpose in attempting to design an experiment in the first place. This purpose is usually posed in the form of a question of some type and it will be your experiment that attempts to answer this inquiry by collecting and analyzing data that is relevant to the issues surrounding this question. Moreover, you may wish to state your own presumption as to what the answer will be to this question, this initial guess is, of course, referred to as the hypothesis.
+
+Introduction
+
+The stock market is quite an enigma to me – with the presence of computing processing and algorithms, the rise and fall of securities seems almost random. Stocks act as an indicator for the wellbeing of businesses, and indeed, the performance of a stock generally reflects the profitability and decisions made by the company. Movements in stock market indices like the Dow Jones Industrial Average (Dow) and the Standard & Poor's 500 (S&P 500) are used as indicators of the general economy and influence the decisions of investors. [https://www.investopedia.com/insights/introduction-to-stock-market-indices/] Global political events such as Brexit and the election of Trump can cause large changes in the economy and the stock market. The goal of this experiment is to relate these factors and determine if world news has any effect on the stock market.
+
+World News
+
+Quantifying world news is quite a daunting task, so a simplification will be made: using posts from Reddit's subreddit r/worldnews. A majority of the reasoning for this choice is for the purpose of convenience; a better method of sampling news would be to pick articles from news sources around the globe and from a variety of topics, including politics, technology, and the environment. This would involve complications including retrieving data on the article (number of views, comments) and omits reader feedback that Reddit provides (upvotes, downvotes, complex comment structuring). However, the real challenge would be finding representative articles for the global population. Posts on /r/worldnews are articles and links shared by anyone around the world, which according to the subreddit description, make it "A place for major news from around the world, excluding US-internal news." This allows news from around the globe to gain traction and spread to a lot of users – r/worldnews currently has 18.8 million subscribers, making it the 6th most subscribed subreddit. [http://redditmetrics.com/top/]
+Although redditors are most definitely not an accurate representation of the global population, the availability of data and accessible-enough platform make r/worldnews an ideal source of data for this experiment.
+
+The Stock Market
+
+The stock market is not perfectly quantifiable, but there are a lot of attempts to do so using stock market indices. The scope of this experiment does not cover the underlying concepts of the different indices and benefits/drawbacks of each. Instead, a few popular indices will be used as general indicators of the market; globally, the MSCI World and S&P Global 100 will be used. [https://www.cnbc.com/2016/01/20/msci-global-stock-market-index-hits-bear-market.html] A few local stock market indices will be used as well, since the effects of each index is by and large unknown (in the capacity of this experiment) and it would do well to have more data sets. Examples of these indices will include the Standard & Poor's 500 Index (S&P 500) for the United States, the Tokyo Stock Price Index (TOPIX) for Japan, and the Financial Times Stock Exchange 250 Index (FTSE 250) for the United Kingdom, and the Shanghai Stock Exchange Composite (SSE Index). The goal is for these local and global indices to depict an image of the top stock markets in the world, thus acting as the experiment's stock market indicators.
+
+Predictions
+
+My best guess for what will happen in the experiment is: a whole lot of numbers that do not make much sense. I have very little faith that posts in a subreddit will be any indication towards the stock market. In fact, if there were a method to analyze the world and predict changes in the market, the economy would be broken by algorithms attempting to take advantage of the process. Regardless of the end result, this will be quite a journey.
+
+
+2. Declaration of Variables: Outline and define all variables of concern (both qualitative and quantitative), state which, if any, variables are controlled providing justification for these decisions. Also ensure that you describe how the variables are measured (including any defined indices).
+We now must decide, “how we are going to measure the issues in ques- tion.” Inititally it is good practice to consider any variable that may have an impact to the question at hand. As you progress and eventu- ally design a procedure (see below) you’ll probably have to prune some or many of these variables of concern in order to avoid bias in your conclusions. At this stage it is also critically important to understand and define how these variables will be measured. Some may be as easy as a “yes/no” response/result, whereas others will have to be carefully decided upon (sometimes even requiring separate experiments to weed out a reliable measurement process).
+
+Target Variable (Output)
+
+The dependent variable in this experiment is the performance of the stock market, given by the stock market index. Since there are many indices that vary based on calculation and market, a few different indices will be used as the target variable. The analysis between the input and output variables will be repeated for each index, thereby showing that the results are somewhat consistent or completely incoherent. The indices used in this experiment, as outlined above, include popular stock market indices that are usually quoted in financial news.
+Stock Market Indices (subject to change): S&P 500, Dow, NASDAQ, NYSE Composite, FTSE 250, FTSE 100, CAC 40, Nikkei 225, TOPIX, SSE Index
+
+
+Features (Inputs)
+
+The experiment will involve numerous input variables, or features, being analyzed through multiple variable linear regression. [http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression] This is a key consideration since there are multiple variables of concern when it comes to posts in r/worldnews. Creating an aggregate index from these variables could lead to bias, so it is a better choice to leave the variables independent of each other.
+Each variable will be quantitative, and qualitative variables (such as sentiment) will require methods to quantify them into usable data.
+
+For each day, there will be numerous posts submitted on that date. The top 300 submissions – sorted by score – from each date will be retrieved. The justification for sorting by score is that the most popular submissions will be the news most capable of affecting the stock market. Each post will include the following information:
+Score – the number of upvotes
+Number of Comments – number of comments on the post
+Upvote Ratio – the ratio of upvotes to downvotes on the post
+Title – the title of the post, typically the name or short description of the article that was posted
+
+The Score, Number of Comments, and Upvote Ratio can be used directly as numerical data, but the Title of the post will be used to determine its sentiment. The sentiment (positive, neutral, or negative) will be classified using TextBlob, a natural language processing library in Python. [https://www.geeksforgeeks.org/twitter-sentiment-analysis-using-python/]
+
+The features derived from these will be the mean and standard deviation of each variable from all 300 posts. In total, there will be 8 input variables (4 base pieces of information with the mean and standard deviation of each). Each day will have these 8 input variables and one output variable (the stock market index on the given date). Submissions from the past 5 years (since January 1, 2013) will be retrieved, meaning a sample size of 1825 days and collecting 547500 posts.
+
+The Sentiment will be a number from -1.0 (negative) to 1.0 (positive), which is already normalized. Since the other features may have large inconsistencies, they will be standardized during data preprocessing. [https://en.wikipedia.org/wiki/Feature_scaling] The standardized value will be equal to (x - u)/(s), where x is original value, u is the mean, and s is standard deviation.
+
+
+3. Sampling Strategy: Outline which methods you'll employ to sample from the population of concern.
+
+The sampling strategy in this experiment is essentially convenience sampling since using Reddit as a source of world news is due to the ease of gathering data. Although convenience sampling is not the most effective type of sampling, the nature of submissions is a type of stratified sampling; r/worldnews aggregates articles from around the globe, attempting to represent many countries and not overrepresent certain countries (i.e. the United States). The top 300 posts on each day, sorted by score, will be used to benchmark the most influential news articles during that time period. There is a hint of random sampling in this process since it is unknown which posts will be submitted and which ones will gain the most upvotes.
+Since there will be 547500 posts being analyzed, the amount of information retrieved will be a fairly good representation of the population.
+
+
+4. Detailed Procedure: Step-by-step procedure outlining how the data will be collected. Note: If you're using a survey, include the survey along with justification/reasoning for the questions being posed.
+The Procedure:
+This is the stage whereby you will collect raw data to be analyzed later in your study. In this stage, it is critical to fully understand how each variable of interest is going to be measured. Effective procedures usually have the following characteristics:
+1. A repeatable process.
+Ideally every observation should be as close to identically set up as possible to eliminate unwarranted effects on your results.
+2. Measurements are clearly and objectively defined.
+Any measurement you make that must be scored on your own judgement may be subject to preconceived bias that you may not even be aware of. To alleviate this issue, decide before taking any measurements as to how each variable will be measured so that the data collected is objective in nature.
+3. Simple rather than complex.
+If at all possible, try to streamline the procedure so that its easy to set up and run. Very often this will mean that you may have to hold some of the variables you’ve considered to be constant. In doing this we will probably satisfy the first condition fairly easily and moreover address the purpose of the study in a more direct manner.
+
+The Procedure
+
+The processing in this experiment will be done through Python due to its wide range of applications and extensive use in data science. Reddit offers a Python library to access its posts, named the Python Reddit API Wrapper (PRAW). By using an existing account on Reddit to authenticate the requests, a developer app can be created in order to generate the client id and client secret. [https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example#first-steps]
+The drawback to Reddit's API is that it is very difficult to sort posts by date and retrieve the top submissions. There is a very useful tool called Pushshift, which allows complex queries for the entire Reddit database. [https://pushshift.io]. This allows queries through HTTP requests, and the date can be specified through Unix Epoch Time. [https://www.reddit.com/r/redditdev/comments/7jy4r3/getting_top_submissions_from_specific_date/]
+Python can make HTTP requests through a useful library called urllib, so information will be retrieved by this method. [https://stackoverflow.com/questions/645312/what-is-the-quickest-way-to-http-get-in-python] However, Pushshift does not contain the Upvote Ratio, so PRAW will be used to retrieve the data based on the submission ID.
+The final step in gathering preliminary data is to analyze the title's sentiment using TextBlob.
+At this point, the four pieces of information have been gathered. This is to be done with the 300 top posts in the day; at the end of this process, the mean and standard deviation will be calculated. The key information from the posts will be saved in a file to prevent data loss, and the features (mean and standard deviation) of each variable will be added to a master list. The dates that have been finished will be recorded so that the process can continue if there are any interruptions.
+
+The process of gathering data for the stock indices will be comparatively much simpler. An API called Alpha Vantage will be used to retrieve different stock indices for each date. [https://www.alphavantage.co/documentation/] These values will be written in a file through a similar process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
