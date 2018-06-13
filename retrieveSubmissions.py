@@ -29,12 +29,13 @@ midnight = datetime.fromtimestamp(1514764800) # january 1, 2018 midnight
 completed_counter = 0
 
 completed_days = listdir("parsed_dates")
+print("currently " + str(len(completed_days)) + " days")
 
 # retrieve submissions from pushshift.io
 # r/worldnews, top 300 posts from specified date
 # posts from one day before epoch_date
 def retrieve_from(epoch_date):
-  POSTS = 300 # number of top posts
+  POSTS = 10 # number of top posts
 
   # 86400 seconds in a day
   before_time = epoch_date - timedelta(days = 1)
@@ -74,7 +75,8 @@ def parse_data(submission_content):
 
     parsed_info["data"].append(
       {
-        "id": counter,
+        "count": counter,
+        "id": submission_id,
         "title": submission_title,
         "score": submission_score,
         "comments": submission_comments,
@@ -101,7 +103,7 @@ while True:
         json.dump(parsed_info, outfile)
       
       completed_counter += 1
-      print("completed day " + get_time(midnight))
+      print("completed day " + get_time(midnight) + " total " + str(completed_counter))
     
     midnight -= timedelta(days = 1) # previous day
   except KeyboardInterrupt:
