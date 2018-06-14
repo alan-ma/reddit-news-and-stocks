@@ -29,7 +29,8 @@ midnight = datetime.fromtimestamp(1514764800) # january 1, 2018 midnight
 completed_counter = 0
 
 completed_days = listdir("parsed_dates")
-print("currently " + str(len(completed_days)) + " days")
+TOTAL = len(completed_days)
+print("currently " + str(TOTAL) + " days")
 
 # retrieve submissions from pushshift.io
 # r/worldnews, top 300 posts from specified date
@@ -103,9 +104,12 @@ while True:
         json.dump(parsed_info, outfile)
       
       completed_counter += 1
-      print("completed day " + get_time(midnight) + " total " + str(completed_counter))
+      print("completed day " + get_time(midnight) + " currently " + str(completed_counter) + ", total " + str(completed_counter + TOTAL))
     
     midnight -= timedelta(days = 1) # previous day
+
+    if completed_counter + TOTAL == 1825:
+      break
   except KeyboardInterrupt:
-    print("completed " + str(completed_counter) + " by " + get_time(midnight))
+    print("completed " + str(completed_counter) + " by " + get_time(midnight) + ", total " + str(completed_counter + TOTAL))
 

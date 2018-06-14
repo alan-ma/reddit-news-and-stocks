@@ -1,11 +1,13 @@
 # testing
 
-import praw, urllib.request, json
-from textblob import TextBlob
+from os import listdir
 
-def get_sentiment(title):
-    analysis = TextBlob(title)
-    return analysis.sentiment.polarity
+# import praw, urllib.request, json
+# from textblob import TextBlob
+
+# def get_sentiment(title):
+#     analysis = TextBlob(title)
+#     return analysis.sentiment.polarity
 
 # reddit = praw.Reddit(client_id='x--wD8MK1ZD7NA',
 #                      client_secret='S2CsK_xAmKHq3_h0ZMB2Ejd6qhY',
@@ -33,6 +35,6 @@ def get_sentiment(title):
 #     print(sentiment)
 #     print('\n')
 
-print(get_sentiment("Brother-in-Law of Spain\u2019s King Must Go to Prison, Court Rules"))
+# print(get_sentiment("Brother-in-Law of Spain\u2019s King Must Go to Prison, Court Rules"))
 
-
+print(sorted(listdir("parsed_dates")[0:], reverse=True))

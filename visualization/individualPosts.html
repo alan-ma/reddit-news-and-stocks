@@ -1,0 +1,63 @@
+
+<!-- visualization for individual posts -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="Individual Posts">
+<meta name="author" content="Alan Ma">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+
+<title>Individual Post Visualization</title>
+
+<div class="app-container center">
+  <h1>Individual Post Visualization</h1>
+</div>
+
+<div class="chart-container">
+  <canvas id="displayChart" width="400" height="400"></canvas>
+</div>
+
+<div class="app-container" id="app">
+  <div class="center">
+    <h2>Top 10 posts from <b>{{ date }}</b> in r/worldnews</h2>
+    <h2>x̄ = <b>{{ mean.toFixed(4) }}</b></h2>
+    <h2>s = <b>{{ stdDev.toFixed(4) }}</b></h2>
+  </div>
+  <div class="center">
+    <div class="select-type available"
+        v-bind:class="{ selected: type === selectedType }"
+        v-for="type in ['score', 'comments', 'upvoteRatio', 'sentiment']"
+        v-on:click="selectType(type)">
+      <p>{{ type }}</p>
+    </div>
+  </div>
+  <br>
+  <div class="center">
+    <div class="select-type"
+        v-bind:class="{ available: currentFile < 1825, unavailable: currentFile === 1825 }"
+        v-on:click="previous()">
+      <p>previous</p>
+    </div>
+    <div class="select-type"
+        v-bind:class="{ available: currentFile > 0, unavailable: currentFile === 0 }"
+        v-on:click="next()">
+      <p>next</p>
+    </div>
+  </div>
+  <div>
+    <div v-for="post in currentData">
+      <h3><b>Post {{ post.count + 1 }}</b></h3>
+      <h3>{{ post.title }}</h3>
+      <p>Score (upvotes): <b>{{ post.score }}</b></p>
+      <p>Comments: <b>{{ post.comments }}</b></p>
+      <p>Upvote Ratio: <b>{{ post.upvoteRatio }}</b></p>
+      <p>Sentiment: <b></b>{{ post.sentiment }}</b></p>
+    </div>
+  </div>
+</div>
+
+<script src="Chart.bundle.min.js"></script>
+<script src="vue.js"></script>
+<script src="fileDirectory.js"></script>
+<script src="individualPosts.js"></script>

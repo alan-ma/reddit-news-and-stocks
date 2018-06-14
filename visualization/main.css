@@ -1,0 +1,55 @@
+
+p, h1, h2, h3 {
+  font-family: 'Open Sans';
+  font-weight: normal;
+}
+
+h1 {
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.chart-container {
+  max-width: 1080px;
+  height: 500px;
+  margin: auto;
+}
+
+.app-container {
+  max-width: 720px;
+  margin: auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.select-type {
+  padding: 0 10px;
+  border: 1px solid #333;
+  transition: 0.2s;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 6px;
+  width: 100px;
+  text-align: center;
+}
+
+.select-type.available {
+  cursor: pointer;
+}
+
+.select-type.unavailable {
+  background: #ddd;
+  cursor: not-allowed;
+}
+
+.select-type.available:hover {
+  transform: scale(1.1);
+}
+
+.select-type.selected {
+  background: rgba(54, 162, 235, 0.6);
+}
+
