@@ -2,10 +2,7 @@
 p, h1, h2, h3 {
   font-family: 'Open Sans';
   font-weight: normal;
-}
-
-h1 {
-  margin: 0;
+  margin: 5px;
 }
 
 .center {
@@ -14,7 +11,7 @@ h1 {
 
 .chart-container {
   max-width: 1080px;
-  height: 500px;
+  height: 50vh;
   margin: auto;
 }
 
@@ -26,13 +23,13 @@ h1 {
 }
 
 .select-type {
-  padding: 0 10px;
+  padding: 3px 10px;
   border: 1px solid #333;
   transition: 0.2s;
   display: inline-block;
-  margin: 5px;
+  margin: 0 5px;
   border-radius: 6px;
-  width: 100px;
+  min-width: 110px;
   text-align: center;
 }
 
@@ -43,6 +40,11 @@ h1 {
 .select-type.unavailable {
   background: #ddd;
   cursor: not-allowed;
+}
+
+.select-type.skipping {
+  background: rgba(54, 162, 235, 0.2);
+  cursor: pointer;
 }
 
 .select-type.available:hover {

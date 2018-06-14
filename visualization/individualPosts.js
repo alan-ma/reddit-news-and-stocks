@@ -34,6 +34,7 @@ var displayChart = new Chart(ctx, {
 });
 
 var currentDataString = '';
+var interval = 0;
 
 // app initialization
 var app = new Vue({
@@ -44,7 +45,8 @@ var app = new Vue({
     selectedType: 'score',
     date: '',
     currentFile: 0,
-    currentData: {}
+    currentData: {},
+    skipping: 0
   },
   methods: {
     selectType: function(type) {
@@ -61,6 +63,40 @@ var app = new Vue({
       if (app.currentFile < 1825) {
         app.currentFile += 1;
         visualize(app.currentFile);
+      }
+    },
+    fastForward: function() {
+      if (app.skipping === 0 && app.currentFile > 0) {
+        app.skipping = 2;
+        clearInterval(interval);
+        interval = setInterval(function() {
+          if (app.currentFile > 0 && app.skipping === 2) {
+            app.currentFile -= 1;
+            visualize(app.currentFile);
+          } else {
+            app.skipping = 0;
+            clearInterval(interval);
+          }
+        }, 100);
+      } else {
+        app.skipping = 0;
+      }
+    },
+    rewind: function() {
+      if (app.skipping === 0 && app.currentFile < 1825) {
+        app.skipping = 1;
+        clearInterval(interval);
+        interval = setInterval(function() {
+          if (app.currentFile < 1825 && app.skipping === 1) {
+            app.currentFile += 1;
+            visualize(app.currentFile);
+          } else if (skipping === 1) {
+            app.skipping = 0;
+            clearInterval(interval);
+          }
+        }, 100);
+      } else {
+        app.skipping = 0;
       }
     }
   }

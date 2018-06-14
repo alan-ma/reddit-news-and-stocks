@@ -24,6 +24,7 @@
     <h2>x̄ = <b>{{ mean.toFixed(4) }}</b></h2>
     <h2>s = <b>{{ stdDev.toFixed(4) }}</b></h2>
   </div>
+  <br>
   <div class="center">
     <div class="select-type available"
         v-bind:class="{ selected: type === selectedType }"
@@ -35,16 +36,27 @@
   <br>
   <div class="center">
     <div class="select-type"
+        v-bind:class="{ available: currentFile < 1825 && skipping === 0, unavailable: currentFile === 1825, skipping: skipping === 1 }"
+        v-on:click="rewind()">
+      <p>rewind</p>
+    </div><!--
+    --><div class="select-type"
         v-bind:class="{ available: currentFile < 1825, unavailable: currentFile === 1825 }"
         v-on:click="previous()">
       <p>previous</p>
-    </div>
-    <div class="select-type"
+    </div><!--
+    --><div class="select-type"
         v-bind:class="{ available: currentFile > 0, unavailable: currentFile === 0 }"
         v-on:click="next()">
       <p>next</p>
+    </div><!--
+    --><div class="select-type"
+        v-bind:class="{ available: currentFile > 0 && skipping === 0, unavailable: currentFile === 0, skipping: skipping === 2 }"
+        v-on:click="fastForward()">
+      <p>fast forward</p>
     </div>
   </div>
+  <br>
   <div>
     <div v-for="post in currentData">
       <h3><b>Post {{ post.count + 1 }}</b></h3>
