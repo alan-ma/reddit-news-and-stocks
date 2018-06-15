@@ -60,7 +60,7 @@ var app = new Vue({
       }
     },
     previous: function() {
-      if (app.currentFile < 1825) {
+      if (app.currentFile < 1824) {
         app.currentFile += 1;
         visualize(app.currentFile);
       }
@@ -83,11 +83,11 @@ var app = new Vue({
       }
     },
     rewind: function() {
-      if (app.skipping === 0 && app.currentFile < 1825) {
+      if (app.skipping === 0 && app.currentFile < 1824) {
         app.skipping = 1;
         clearInterval(interval);
         interval = setInterval(function() {
-          if (app.currentFile < 1825 && app.skipping === 1) {
+          if (app.currentFile < 1824 && app.skipping === 1) {
             app.currentFile += 1;
             visualize(app.currentFile);
           } else if (skipping === 1) {

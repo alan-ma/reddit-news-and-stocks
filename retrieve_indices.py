@@ -1,0 +1,43 @@
+# retrieve stock market indices from alpha vantage api
+
+# indices
+INDICES = [
+"^SPG1200", "S&P GLOBAL 1200"
+"^GDOW", "The Global Dow (USD)"
+"^W1DOW", "Dow Jones Global Index"
+"^GSPC"	"S&P"
+"^DJI"	Dow
+"^IXIC"	Nasdaq
+"^NYA"	NYSE COMPOSITE (DJ)
+"^XAX"	NYSE AMEX COMPOSITE INDEX
+"^BATSK"	BATS 1000 Index
+"^RUT"	Russell 2000
+"^VIX"	Vix
+"^FTSE"	FTSE 100
+"^GDAXI"	DAX
+"^FCHI"	CAC 40
+"^STOXX50E"	ESTX50 EUR P
+"^N100"	EURONEXT 100
+"^BFX"	BEL 20
+"MICEXINDEXCF.ME"	MICEX IND
+"^N225"	Nikkei 225
+"^HSI"	HANG SENG INDEX
+"000001.SS"	SSE Composite Index
+"^STI"	STI Index
+"^AXJO"	S&P/ASX 200
+"^AORD"	ALL ORDINARIES
+"^BSESN"	S&P BSE SENSEX
+"^JKSE"	Jakarta Composite Index
+"^KLSE"	FTSE Bursa Malaysia KLCI
+"^NZ50"	S&P/NZX 50 INDEX GROSS
+"^KS11"	KOSPI Composite Index
+"^TWII"	TSEC weighted index
+"^GSPTSE"	S&P/TSX Composite index
+"^BVSP"	IBOVESPA
+"^MXX"	IPC MEXICO
+"^IPSA"	IPSA SANTIAGO DE CHILE
+"^MERV"	MERVAL BUENOS AIRES
+"^TA100"	TA-125
+"^CASE30"	EGX 30 INDEX
+"JN0U.FGI"	FTSE/JSE TOP 40 USD
+]

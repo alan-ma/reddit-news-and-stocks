@@ -1,5 +1,11 @@
 data senior thesis
 
+CHANGES
+	5 years of 10 posts per day, or 1825 days for 18250 posts
+		reasons: sampling time, diff between top and bottom posts
+	issues
+		reddit 2013 (low population) vs reddit now
+
 premise for the data stats:
 look at nyse/tse index
 look at volume/activity on r/worldnews (use PRAW for scraping)

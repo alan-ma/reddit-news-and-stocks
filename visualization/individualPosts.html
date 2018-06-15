@@ -36,12 +36,12 @@
   <br>
   <div class="center">
     <div class="select-type"
-        v-bind:class="{ available: currentFile < 1825 && skipping === 0, unavailable: currentFile === 1825, skipping: skipping === 1 }"
+        v-bind:class="{ available: currentFile < 1824 && skipping === 0, unavailable: currentFile === 1824, skipping: skipping === 1 }"
         v-on:click="rewind()">
       <p>rewind</p>
     </div><!--
     --><div class="select-type"
-        v-bind:class="{ available: currentFile < 1825, unavailable: currentFile === 1825 }"
+        v-bind:class="{ available: currentFile < 1824, unavailable: currentFile === 1824 }"
         v-on:click="previous()">
       <p>previous</p>
     </div><!--
