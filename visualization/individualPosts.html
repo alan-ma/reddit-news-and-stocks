@@ -26,7 +26,7 @@
   </div>
   <br>
   <div class="center">
-    <div class="select-type available"
+    <div class="select-type available individual"
         v-bind:class="{ selected: type === selectedType }"
         v-for="type in ['score', 'comments', 'upvoteRatio', 'sentiment']"
         v-on:click="selectType(type)">
@@ -36,12 +36,12 @@
   <br>
   <div class="center">
     <div class="select-type"
-        v-bind:class="{ available: currentFile < 1824 && skipping === 0, unavailable: currentFile === 1824, skipping: skipping === 1 }"
+        v-bind:class="{ available: currentFile < numFiles - 1 && skipping === 0, unavailable: currentFile === numFiles - 1, skipping: skipping === 1 }"
         v-on:click="rewind()">
       <p>rewind</p>
     </div><!--
     --><div class="select-type"
-        v-bind:class="{ available: currentFile < 1824, unavailable: currentFile === 1824 }"
+        v-bind:class="{ available: currentFile < numFiles - 1, unavailable: currentFile === numFiles - 1 }"
         v-on:click="previous()">
       <p>previous</p>
     </div><!--

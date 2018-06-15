@@ -46,7 +46,8 @@ var app = new Vue({
     date: '',
     currentFile: 0,
     currentData: {},
-    skipping: 0
+    skipping: 0,
+    numFiles: fileDirectory.length
   },
   methods: {
     selectType: function(type) {
@@ -60,7 +61,7 @@ var app = new Vue({
       }
     },
     previous: function() {
-      if (app.currentFile < 1824) {
+      if (app.currentFile < app.numFiles - 1) {
         app.currentFile += 1;
         visualize(app.currentFile);
       }
@@ -83,14 +84,14 @@ var app = new Vue({
       }
     },
     rewind: function() {
-      if (app.skipping === 0 && app.currentFile < 1824) {
+      if (app.skipping === 0 && app.currentFile < app.numFiles - 1) {
         app.skipping = 1;
         clearInterval(interval);
         interval = setInterval(function() {
-          if (app.currentFile < 1824 && app.skipping === 1) {
+          if (app.currentFile < app.numFiles - 1 && app.skipping === 1) {
             app.currentFile += 1;
             visualize(app.currentFile);
-          } else if (skipping === 1) {
+          } else if (app.skipping === 1) {
             app.skipping = 0;
             clearInterval(interval);
           }
@@ -187,7 +188,7 @@ var parseData = function(dataText, dataType) {
 
 var visualize = function(currentFile) {
   var fileName = fileDirectory[currentFile];
-  readTextFile('http://localhost:3000/parsed_dates/' + fileName + '.json');
+  readTextFile('http://localhost:3000/new_parsed_dates/' + fileName + '.json');
   var utcSeconds = parseInt(fileName);
   var date = new Date(0); // the 0 sets the date to the epoch
   date.setUTCSeconds(utcSeconds);

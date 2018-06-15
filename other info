@@ -1,0 +1,27 @@
+other info
+
+reddit bot
+	client-id: x--wD8MK1ZD7NA
+	client-secret: S2CsK_xAmKHq3_h0ZMB2Ejd6qhY
+	user: energywolf
+	pass: Avg-e3t-wU4-YMF
+	mac:dataseniorthesis:v1 (by /u/energywolf)
+
+alpha vantage
+	NYDT3BAZT5URMG8S
+
+pushshift io
+	https://www.reddit.com/r/redditdev/comments/7jy4r3/getting_top_submissions_from_specific_date/
+	https://stackoverflow.com/questions/645312/what-is-the-quickest-way-to-http-get-in-python
+
+sentiment
+	https://www.geeksforgeeks.org/twitter-sentiment-analysis-using-python/
+
+stock indices
+	https://www.alphavantage.co/documentation/
+	https://www.alpha-vantage.community/post/world-indexes-9627480?highlight=index
+
+
+linear regresssion
+	https://stackoverflow.com/questions/11479064/multiple-linear-regression-in-python
+	http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression

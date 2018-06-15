@@ -3,8 +3,14 @@ data senior thesis
 CHANGES
 	5 years of 10 posts per day, or 1825 days for 18250 posts
 		reasons: sampling time, diff between top and bottom posts
-	issues
+	3 years of 15 posts per day, or 1095 days for 16425 posts
+	issues/difficulties
 		reddit 2013 (low population) vs reddit now
+		global stock indices???
+			stock indices are hard to find an api for, apparently need support from the ppl who make it
+			the best api doesnt have us external stocks/indices
+		oh yea weekends -> smaller sample size
+		time zones qq
 
 premise for the data stats:
 look at nyse/tse index

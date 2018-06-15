@@ -12,7 +12,7 @@
 import json, numpy
 from os import listdir
 
-files = sorted(listdir("parsed_dates"), reverse=True)
+files = sorted(listdir("new_parsed_dates"), reverse=True)
 
 print("starting analysis of " + str(len(files)) + " posts")
 
@@ -26,7 +26,7 @@ sentiment_means = []
 sentiment_std_devs = []
 
 for file_name in files:
-  data = json.load(open("parsed_dates/" + file_name, 'r'))["data"]
+  data = json.load(open("new_parsed_dates/" + file_name, 'r'))["data"]
 
   scores = [post["score"] for post in data]
   comments = [post["comments"] for post in data]
@@ -99,7 +99,8 @@ print("normalized values created")
 training_set = {}
 
 for i in range(len(files)):
-  training_set[ files[i].strip(".json") ] = [
+  date_index = round(int(files[i].strip(".json")) / 86400) * 86400
+  training_set[ str(date_index) ] = [
     score_means_normalized[i],
     score_std_devs_normalized[i],
     comments_means_normalized[i],
