@@ -23,6 +23,14 @@
     <h2>Top 10 posts from <b>{{ date }}</b> in r/worldnews</h2>
     <h2>x̄ = <b>{{ mean.toFixed(4) }}</b></h2>
     <h2>s = <b>{{ stdDev.toFixed(4) }}</b></h2>
+    <h2>σ<sub>x̄</sub> = <b>{{ stdDev / Math.pow(numPosts, 0.5) }}</b></h2>
+    <br>
+    <h3><b>99% confidence</b></h3>
+    <h3>{{ (mean - 2.576 * stdDev / Math.pow(numPosts, 0.5)).toFixed(4) }} < μ < {{ (mean + 2.576 * stdDev / Math.pow(numPosts, 0.5)).toFixed(4) }} </h3>
+    <h3><b>95% confidence</b></h3>
+    <h3>{{ (mean - 1.96 * stdDev / Math.pow(numPosts, 0.5)).toFixed(4) }} < μ < {{ (mean + 1.96 * stdDev / Math.pow(numPosts, 0.5)).toFixed(4) }} </h3>
+    <h3><b>95% confidence</b></h3>
+    <h3>{{ (mean - 1.645 * stdDev / Math.pow(numPosts, 0.5)).toFixed(4) }} < μ < {{ (mean + 1.645 * stdDev / Math.pow(numPosts, 0.5)).toFixed(4) }} </h3>
   </div>
   <br>
   <div class="center">

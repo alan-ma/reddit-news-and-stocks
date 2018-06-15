@@ -1,5 +1,41 @@
 data senior thesis
 
+world news vs the stock market
+is there any correlation??
+define world news
+reddit
+vs gathering organically
+the stock market
+indices
+hypothesis
+variables
+input (score, comments, upvote ratio, sentiment)
+apis are difficult
+features (mean, std dev of each), normalized
+multiple variable linear regresssion
+output (index value)
+stock market apis suck
+control (number of posts per day)
+sampling strategy
+convenience, stratified, random
+originally: 5 years with 300 posts per day (1825 days, 547500)
+then: 5 years of 10 posts per day (1825 days, 18250 posts)
+	ask later for these results, kinda interesting
+now: 3 years of 15 posts per day (1095 days, 16425 posts)
+	500 server internal error (at ~600 rn)
+procedure
+retrieve submissions
+retrieve indices
+write file directory
+[ visualize individual ]
+aggregate data
+[ visualize aggregate ]
+analyze
+predict
+
+
+
+
 CHANGES
 	5 years of 10 posts per day, or 1825 days for 18250 posts
 		reasons: sampling time, diff between top and bottom posts

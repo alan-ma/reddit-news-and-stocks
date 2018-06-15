@@ -47,7 +47,8 @@ var app = new Vue({
     currentFile: 0,
     currentData: {},
     skipping: 0,
-    numFiles: fileDirectory.length
+    numFiles: fileDirectory.length,
+    numPosts: 0
   },
   methods: {
     selectType: function(type) {
@@ -176,6 +177,7 @@ var parseData = function(dataText, dataType) {
 
   stdDev = Math.sqrt(stdDev / (dataJSON.length - 1));
 
+  app.numPosts = data.length;
   app.mean = mean;
   app.stdDev = stdDev;
 
