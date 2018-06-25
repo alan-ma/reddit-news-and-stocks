@@ -181,7 +181,7 @@ SSE Composite Index | 0.082211307
 Nikkei 225 | 0.069837138
 ESTX50 EUR P | 0.064934665
  | 
-Mean | 0.312231032
+ Mean | 0.312231032
 
 ### Predictions
 
