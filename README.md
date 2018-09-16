@@ -9,9 +9,9 @@ The stock market is quite an enigma due to the complex relationships between eve
 
 To get an idea of what the data looks like, the following tools were built (Vue.js, Chart.js):
 
-Individual posts (original data): http://52.207.89.186:3000/visualization/individualPosts.html
+Individual posts (original data): http://54.174.75.231:3000/visualization/individualPosts.html
 
-Aggregate data (histograms): http://52.207.89.186:3000/visualization/aggregatePosts.html
+Aggregate data (histograms): http://54.174.75.231:3000/visualization/aggregatePosts.html
 
 ## Procedure
 
@@ -160,9 +160,9 @@ The aggregate data and additional information such as histogram values can be vi
 
 The interactive visualization tools have been hosted on a web server. Vue.js and Chart.js were used to create the web pages.
 
-Individual posts (original data): http://52.207.89.186:3000/visualization/individualPosts.html
+Individual posts (original data): http://54.174.75.231:3000/visualization/individualPosts.html
 
-Aggregate data (histograms): http://52.207.89.186:3000/visualization/aggregatePosts.html
+Aggregate data (histograms): http://54.174.75.231:3000/visualization/aggregatePosts.html
 
 ### Coefficients of Determination
 Index Name | Coefficient
