@@ -9,9 +9,9 @@ The stock market is quite an enigma due to the complex relationships between eve
 
 To get an idea of what the data looks like, the following tools were built (Vue.js, Chart.js):
 
-Individual posts (original data): http://54.174.75.231:3000/visualization/individualPosts.html
+Individual posts (original data): https://alan-ma.github.io/reddit-news-and-stocks/visualization/individualPosts
 
-Aggregate data (histograms): http://54.174.75.231:3000/visualization/aggregatePosts.html
+Aggregate data (histograms): https://alan-ma.github.io/reddit-news-and-stocks/visualization/aggregatePosts
 
 ## Procedure
 
@@ -140,29 +140,29 @@ The indices can be looked up on Yahoo Finance to find more detailed descriptions
 
 ### Software
 
-The Python scripts can be found in this report’s GitHub repository: https://github.com/alan-ma/data-senior-thesis. Individual scripts are listed below:
+The Python scripts can be found in this report’s GitHub repository: https://github.com/alan-ma/reddit-news-and-stocks. Individual scripts are listed below:
 
-Retrieving information for each day’s top posts: https://github.com/alan-ma/data-senior-thesis/blob/master/new_retrieve_submissions.py
+Retrieving information for each day’s top posts: https://github.com/alan-ma/reddit-news-and-stocks/blob/master/new_retrieve_submissions.py
 
-Retrieving stock market indices: https://github.com/alan-ma/data-senior-thesis/blob/master/retrieve_indices.py
+Retrieving stock market indices: https://github.com/alan-ma/reddit-news-and-stocks/blob/master/retrieve_indices.py
 
-Aggregating and preprocessing data: https://github.com/alan-ma/data-senior-thesis/blob/master/aggregate_data.py
+Aggregating and preprocessing data: https://github.com/alan-ma/reddit-news-and-stocks/blob/master/aggregate_data.py
 
-Analyzing data: https://github.com/alan-ma/data-senior-thesis/blob/master/analyze.py
+Analyzing data: https://github.com/alan-ma/reddit-news-and-stocks/blob/master/analyze.py
 
 ### Data
 
-The collected data are also accessible in the GitHub repository. Each day’s top posts are stored in individual JSON files, all 1095 accessible at https://github.com/alan-ma/data-senior-thesis/tree/master/new_parsed_dates.
+The collected data are also accessible in the GitHub repository. Each day’s top posts are stored in individual JSON files, all 1095 accessible at https://github.com/alan-ma/reddit-news-and-stocks/tree/master/new_parsed_dates.
 
-The aggregate data and additional information such as histogram values can be viewed in JSON files at https://github.com/alan-ma/data-senior-thesis/tree/master/aggregate_data.
+The aggregate data and additional information such as histogram values can be viewed in JSON files at https://github.com/alan-ma/reddit-news-and-stocks/tree/master/aggregate_data.
 
 ### Visualization Tools
 
 The interactive visualization tools have been hosted on a web server. Vue.js and Chart.js were used to create the web pages.
 
-Individual posts (original data): http://54.174.75.231:3000/visualization/individualPosts.html
+Individual posts (original data): https://alan-ma.github.io/reddit-news-and-stocks/visualization/individualPosts
 
-Aggregate data (histograms): http://54.174.75.231:3000/visualization/aggregatePosts.html
+Aggregate data (histograms): https://alan-ma.github.io/reddit-news-and-stocks/visualization/aggregatePosts
 
 ### Coefficients of Determination
 Index Name | Coefficient
