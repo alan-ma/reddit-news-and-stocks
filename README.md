@@ -5,6 +5,14 @@
 ## Abstract
 The stock market is quite an enigma due to the complex relationships between events that occur in the world and the prices of different stocks. The purpose of this this report was to build a model to predict stock market indices such as the Dow Jones Industrial Average (Dow) and the Standard & Poor's 500 (S&P 500), which are often used as indicators of the general economy. The model was based off of trends in the activity on Reddit’s subreddit r/worldnews, which includes articles pertaining to the global population. The top 15 posts from each day (over three years) in r/worldnews were retrieved, including four pieces of information for each post: the number of upvotes, number of comments, percentage of upvotes (versus downvotes), and the sentiment of the article’s title. These factors were used to create a model through the process of multiple linear regression and also predict recent values of the analyzed stock market indices. The result was that the models created did not fit the training data and inaccurately predicted recent stock market indices.
 
+### Visualization Tools
+
+To get an idea of what the data looks like, the following tools were built (Vue.js, Chart.js):
+
+Individual posts (original data): http://54.174.75.231:3000/visualization/individualPosts.html
+
+Aggregate data (histograms): http://54.174.75.231:3000/visualization/aggregatePosts.html
+
 ## Procedure
 
 ### Determining Which Data to Use
@@ -150,11 +158,11 @@ The aggregate data and additional information such as histogram values can be vi
 
 ### Visualization Tools
 
-The interactive visualization tools have been hosted on a web server.
+The interactive visualization tools have been hosted on a web server. Vue.js and Chart.js were used to create the web pages.
 
-Individual posts (original data): http://52.207.89.186:3000/visualization/individualPosts.html
+Individual posts (original data): http://54.174.75.231:3000/visualization/individualPosts.html
 
-Aggregate data (histograms): http://52.207.89.186:3000/visualization/aggregatePosts.html
+Aggregate data (histograms): http://54.174.75.231:3000/visualization/aggregatePosts.html
 
 ### Coefficients of Determination
 Index Name | Coefficient
