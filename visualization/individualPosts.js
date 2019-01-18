@@ -190,7 +190,7 @@ var parseData = function(dataText, dataType) {
 
 var visualize = function(currentFile) {
   var fileName = fileDirectory[currentFile];
-  readTextFile('http://localhost:3000/new_parsed_dates/' + fileName + '.json');
+  readTextFile('https://alan-ma.github.io/reddit-news-and-stocks/new_parsed_dates/' + fileName + '.json');
   var utcSeconds = parseInt(fileName);
   var date = new Date(0); // the 0 sets the date to the epoch
   date.setUTCSeconds(utcSeconds);

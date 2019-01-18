@@ -55,7 +55,7 @@ var readTextFile = function(file, histogram) {
           parseData(app.selectedType);
         } else {
           centralLimitData = JSON.parse(rawFile.responseText);
-          readTextFile('http://localhost:3000/aggregate_data/histogram_values.json', true);
+          readTextFile('https://alan-ma.github.io/reddit-news-and-stocks/new_parsed_dates/', true);
         }
       }
     }
